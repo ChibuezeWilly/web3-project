@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.background-container {
+    width: 100%;
+    height: 100vh;
+}
+.wallet-options {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-top: 10px;
+    gap: 10px;
+    padding: 10px;
+    margin-left: -25px;
+    display: none;
+    z-index: 1100;
+    /* Ensure it's above other content */
+}
+/* dynamic code */
+.dynamic-shadow-dom {
+    --dynamic-connect-button-background: white;
+    --dynamic-text-size-button-primary: 50px;
+    --dynamic-font-family-primary: "Roboto", sans-serif;
+    --dynamic-border-radius: 25px;
+    --dynamic-connect-button-border: 2px solid #000;
+    --dynamic-connect-button-color: green;
+    --dynamic-connect-button-radius: 35px;
+}
+
+#Profile {
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    font-size: 25px;
+}
+
+#profileMenu {
+    margin-top: 10px;
+    margin-left: -50px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    top: 70px;
+    display: block;
+    text-align: center;
+}
+
+#profileMenu div {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+#profileDiv {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+#profileMenu div:last-child {
+    border-bottom: none;
+}
+
+#Profile i {
+    margin-right: 4px;
+}
+
+#walletAddress {
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+}
+
+#disconnectButton {
+    background-color: green;
+    color: white;
+}
+
+
+/* quest */
+#quest-section {
+    margin-top: 60px;
+    /* Prevent overlap with the fixed header */
+}
+
+.quest-item {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.quest-item:first-of-type {
+    margin-top: 130px;
+}
+
+.quest-item img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.quest-card {
+    color: white;
+    position: absolute;
+    background-color: #07152d;
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 1000;
+    height: 290px;
+    width: 300px;
+    margin-top: -120px;
+    margin-left: -70px;
+    display: none; 
+}
+
+.quest-card::-webkit-scrollbar {
+    display: none;
+}
+
+#join {
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 25px;
+    border-radius: 12px;
+    border: none;
+    background-color: #0045e7;
+    margin-left: auto;
+    display: block;
+    margin-top: 8px;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.quest1 {
+    top: 5%;
+    left: 10%;
+}
+
+.quest2 {
+    top: 45%;
+    left: 40%;
+}
+
+.quest3 {
+    top: 60%;
+    left: 70%;
+}
+
+@media screen and (max-width: 756px) {
+    .background-container {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+        width: 130%;
+        font-family: 'Arial', sans-serif;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 120vh;
+    }
+
+    .quest-card {
+        position: absolute;
+        background-color: #07152d;
+        border: none;
+        border-radius: 15px;
+        transition: transform 0.3s ease-in-out;
+        overflow-y: auto;
+        z-index: 1000;
+        height: 250px;
+        width: 250px;
+    }
+
+    .quest-card::-webkit-scrollbar {
+        display: none;
+    }
+
+    .quest1 {
+        top: 2%;
+        left: 15%;
+    }
+
+    .quest2 {
+        top: 35%;
+        left: 65%;
+    }
+
+    .quest3 {
+        top: 65%;
+        left: 15%;
+    }
+}
