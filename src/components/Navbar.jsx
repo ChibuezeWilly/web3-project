@@ -41,7 +41,7 @@ const Navbar = () => {
 				}}
 				locale={locale}>
 				<nav
-					className="flex flex-row justify-end md:justify-evenly items-center h-20 rounded-full mx-auto z-50"
+					className="flex flex-row justify-end md:justify-evenly items-center h-20 rounded-full mx-auto z-50 "
 					style={{
 						backgroundColor: "#01173e",
 						width: "85%",
