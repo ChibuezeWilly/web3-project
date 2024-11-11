@@ -10,7 +10,6 @@ const QuestPage = () => {
 				background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${BackgroundImage})`,
 				backgroundPosition: "center",
 				backgroundSize: "cover",
-				overflowX: "hidden",
 				backgroundRepeat: "no-repeat",
 			}}>
 			<Navbar />		
