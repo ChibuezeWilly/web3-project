@@ -171,7 +171,7 @@
 @media screen and (max-width: 756px) {
     .background-container {
         background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-        width: 130%;
+        width: 150%;
         font-family: 'Arial', sans-serif;
         background-repeat: no-repeat;
         background-position: center;
@@ -201,7 +201,7 @@
     }
 
     .quest2 {
-        top: 35%;
+        top: 40%;
         left: 65%;
     }
 
