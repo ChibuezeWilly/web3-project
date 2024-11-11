@@ -1,4 +1,4 @@
-import BackgroundImage from '../assets/images/BackgroundImage.jpg';
+import BackgroundImage from '../assets/BackgroundImage.jpg'
 import Quests from "../components/Quests";
 import Navbar from "../components/Navbar";
 

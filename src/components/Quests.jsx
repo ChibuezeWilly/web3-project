@@ -1,5 +1,5 @@
 import { useState } from "react";
-import quests from "../quest.json";
+import quests from '../quest.json'
 import QuestCard from "./QuestCard";
 import "../styles.css";
 
