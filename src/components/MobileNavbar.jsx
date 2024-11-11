@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const MobileNavbar = ({ closeSideBar }) => {
 	return (
-		<div className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-100 flex flex-col justify-center items-center md:hidden z-50 transition ease-in-out delay-1000">
+		<div className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-100 flex flex-col items-center md:hidden z-50 transition ease-in-out delay-1000">
 			{/* Close button */}
 			<FaTimes
 				className="text-white text-2xl mt-5 self-end mr-5 cursor-pointer"
