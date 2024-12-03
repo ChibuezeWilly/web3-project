@@ -1,7 +1,5 @@
-import { FaBars } from "react-icons/fa";
+import "../styles.css";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import MobileNavbar from "../components/MobileNavbar";
 import {
 	DynamicContextProvider,
 	DynamicWidget,
@@ -25,9 +23,8 @@ const locale = {
 const Navbar = () => {
 	const activeLink = ({ isActive }) =>
 		isActive
-			? "font-semibold py-3 px-6 rounded-full space-x-5 hidden md:block bg-green-500 text-white"
-			: "text-green-600 font-semibold py-3 px-6 rounded-full bg-white hidden md:block hover:text-gray-900";
-	const [openSideBar, setOpenSideBar] = useState(false);
+			? "active-navbar font-semibold md:text-xl space-x-5 text-white"
+			: "text-white font-semibold text-sm md:text-xl";
 
 	return (
 		<>
@@ -41,38 +38,21 @@ const Navbar = () => {
 				}}
 				locale={locale}>
 				<nav
-					className="flex flex-row justify-end md:justify-evenly items-center h-20 rounded-full mx-auto z-50 "
+					className="nav flex flex-row justify-evenly items-center w-full pt-2"
 					style={{
-						backgroundColor: "#01173e",
-						width: "85%",
-						transform: "translateY(7px)",
-						
+						backgroundColor: "#000",
 					}}>
-					<NavLink
-						className= {activeLink}
-						to="/">
+					<NavLink className={activeLink} to="/">
 						Quests
 					</NavLink>
-					<NavLink
-						className= {activeLink}
-						to="/whitepaper">
+					<NavLink className={activeLink} to="/whitepaper">
 						WhitePaper
 					</NavLink>
-					<NavLink
-						className= {activeLink}
-						to="/community">
+					<NavLink className={activeLink} to="/community">
 						Community
 					</NavLink>
-					<DynamicWidget className="wallet-connect mr-5 " />
-
-					<FaBars
-						className="text-white text-2xl md:hidden cursor-pointer mx-8"
-						onClick={() => setOpenSideBar(!openSideBar)}
-					/>
+					<DynamicWidget className="wallet-connect mr-5" />
 				</nav>
-				{openSideBar && (
-					<MobileNavbar closeSideBar={() => setOpenSideBar(false)} />
-				)}
 			</DynamicContextProvider>
 		</>
 	);

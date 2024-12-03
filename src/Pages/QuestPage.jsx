@@ -1,15 +1,8 @@
-import BackgroundImage from '../assets/BackgroundImage.jpg'
 import Quests from "../components/Quests";
-import Navbar from "../components/Navbar";
 
 const QuestPage = () => {
 	return (
-		<div
-			className="background-container relative"
-			style={{
-				
-			}}>
-			<Navbar />		
+		<div className="background-container" style={{}}>
 			<Quests />
 		</div>
 	);

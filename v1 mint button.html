@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LightHouse NFT Minting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LightHouse NFT Collection</h1>
+        <p>Mint a unique LightHouse NFT on the blockchain!</p>
+        <button id="mintButton">Mint NFT</button>
+    </div>
+
+    <!-- Web3.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
+    <script>
+        
+
+        async function mintNFT() {
+            if (typeof window.ethereum !== 'undefined') {
+                const web3 = new Web3(window.ethereum);
+                await window.ethereum.request({ method: 'eth_requestAccounts' });
+                const accounts = await web3.eth.getAccounts();
+                const userAddress = accounts[0];
+                
+                const lighthouseContract = new web3.eth.Contract(contractABI, contractAddress);
+
+                // Log available contract methods to debug the issue
+                console.log(lighthouseContract.methods);
+
+                try {
+                    await lighthouseContract.methods.mintNFT(userAddress).send({ from: userAddress });
+                    alert('NFT minted successfully!');
+                } catch (error) {
+                    console.error("Minting failed:", error);
+                    alert('Minting failed. Check console for details.');
+                }
+            } else {
+                alert('Please install MetaMask to use this feature.');
+            }
+        }
+
+        document.getElementById("mintButton").onclick = mintNFT;
+    </script>
+</body>
+</html>

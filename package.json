@@ -3,43 +3,46 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-  "homepage": "https://github.com/ChibuezeWilly/web3-project.git",
+	"homepage": "https://github.com/ChibuezeWilly/web3-project.git",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
 		"lint": "eslint .",
 		"preview": "vite preview",
-    	"predeploy": "npm run build",
-    	"deploy": "gh-pages -d build"
-
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
+		"server": "json-server --watch src/quest.json --port 5000"
 	},
 	"dependencies": {
-		"@dynamic-labs/ethereum": "^3.4.6",
-		"@dynamic-labs/ethereum-aa": "^3.4.6",
-		"@dynamic-labs/sdk-react-core": "^3.4.6",
-		"@dynamic-labs/wagmi-connector": "^3.4.6",
-		"@tanstack/react-query": "^5.59.16",
+		"@dynamic-labs/ethereum": "^3.6.3",
+		"@dynamic-labs/ethereum-aa": "^3.6.3",
+		"@dynamic-labs/sdk-react-core": "^3.6.3",
+		"@dynamic-labs/wagmi-connector": "^3.6.3",
+		"@tanstack/react-query": "^5.60.5",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-icons": "^5.3.0",
-		"react-router-dom": "^6.27.0",
-		"viem": "^2.21.38",
-		"wagmi": "^2.12.25"
+		"react-router-dom": "^7.0.1",
+		"react-spinners": "^0.14.1",
+		"viem": "^2.21.47",
+		"wagmi": "^2.12.33",
+		"web3": "^4.15.0"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.13.0",
-		"@types/react": "^18.3.11",
+		"@eslint/js": "^9.15.0",
+		"@types/react": "^18.3.12",
 		"@types/react-dom": "^18.3.1",
 		"@vitejs/plugin-react": "^4.3.3",
 		"autoprefixer": "^10.4.20",
-		"eslint": "^9.13.0",
-		"eslint-plugin-react": "^7.37.1",
+		"eslint": "^9.15.0",
+		"eslint-plugin-react": "^7.37.2",
 		"eslint-plugin-react-hooks": "^5.0.0",
-		"eslint-plugin-react-refresh": "^0.4.13",
+		"eslint-plugin-react-refresh": "^0.4.14",
 		"gh-pages": "^6.2.0",
-		"globals": "^15.11.0",
-		"postcss": "^8.4.47",
-		"tailwindcss": "^3.4.14",
-		"vite": "^5.4.9"
+		"globals": "^15.12.0",
+		"json-server": "^1.0.0-beta.3",
+		"postcss": "^8.4.49",
+		"tailwindcss": "^3.4.15",
+		"vite": "^5.4.11"
 	}
 }

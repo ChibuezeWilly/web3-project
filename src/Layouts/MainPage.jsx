@@ -1,7 +1,13 @@
-import { Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const MainPage = () => {
-  return <Outlet /> 
-}
+	return (
+		<>
+			<Navbar />
+			<Outlet />
+		</>
+	);
+};
 
-export default MainPage
+export default MainPage;
