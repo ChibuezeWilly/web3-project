@@ -67,32 +67,6 @@
     <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
     <script>
         
-
-        async function mintNFT() {
-            if (typeof window.ethereum !== 'undefined') {
-                const web3 = new Web3(window.ethereum);
-                await window.ethereum.request({ method: 'eth_requestAccounts' });
-                const accounts = await web3.eth.getAccounts();
-                const userAddress = accounts[0];
-                
-                const lighthouseContract = new web3.eth.Contract(contractABI, contractAddress);
-
-                // Log available contract methods to debug the issue
-                console.log(lighthouseContract.methods);
-
-                try {
-                    await lighthouseContract.methods.mintNFT(userAddress).send({ from: userAddress });
-                    alert('NFT minted successfully!');
-                } catch (error) {
-                    console.error("Minting failed:", error);
-                    alert('Minting failed. Check console for details.');
-                }
-            } else {
-                alert('Please install MetaMask to use this feature.');
-            }
-        }
-
-        document.getElementById("mintButton").onclick = mintNFT;
     </script>
 </body>
 </html>

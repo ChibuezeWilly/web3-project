@@ -1,5 +1,6 @@
+import { FaCheckCircle } from "react-icons/fa";
 const Twitter = () => {
-  return (
+	return (
 		<div className="flex flex-row space-x-3 mt-5 ml-3">
 			<FaCheckCircle className="text-white text-xl mt-1" />
 			<li className="text-white flex-row relative text-lg">
@@ -9,6 +10,6 @@ const Twitter = () => {
 			</li>
 		</div>
 	);
-}
+};
 
-export default Twitter
+export default Twitter;
