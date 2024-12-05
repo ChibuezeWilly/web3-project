@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import { FaCheckCircle } from "react-icons/fa";
 const Mint = () => {
-	const contractAddress = "0x27Af39d16A69e2D3E7d07184198352D5f2CF1268";
+	const contractAddress = "0x21030ac3F7E5f1823c378e30cFDC2369A8E72a70";
 	const contractABI = [
 		{
 			inputs: [
@@ -22,7 +22,13 @@ const Mint = () => {
 			type: "function",
 		},
 		{
-			inputs: [],
+			inputs: [
+				{
+					internalType: "address",
+					name: "_feeRecipient",
+					type: "address",
+				},
+			],
 			stateMutability: "nonpayable",
 			type: "constructor",
 		},
@@ -133,6 +139,25 @@ const Mint = () => {
 			inputs: [
 				{
 					internalType: "address",
+					name: "recipient",
+					type: "address",
+				},
+			],
+			name: "mintNFT",
+			outputs: [
+				{
+					internalType: "uint256",
+					name: "",
+					type: "uint256",
+				},
+			],
+			stateMutability: "payable",
+			type: "function",
+		},
+		{
+			inputs: [
+				{
+					internalType: "address",
 					name: "owner",
 					type: "address",
 				},
@@ -200,25 +225,6 @@ const Mint = () => {
 			],
 			name: "ApprovalForAll",
 			type: "event",
-		},
-		{
-			inputs: [
-				{
-					internalType: "address",
-					name: "recipient",
-					type: "address",
-				},
-			],
-			name: "mintNFT",
-			outputs: [
-				{
-					internalType: "uint256",
-					name: "",
-					type: "uint256",
-				},
-			],
-			stateMutability: "nonpayable",
-			type: "function",
 		},
 		{
 			anonymous: false,
@@ -316,6 +322,32 @@ const Mint = () => {
 			type: "function",
 		},
 		{
+			inputs: [
+				{
+					internalType: "uint256",
+					name: "fee",
+					type: "uint256",
+				},
+			],
+			name: "setExtraFee",
+			outputs: [],
+			stateMutability: "nonpayable",
+			type: "function",
+		},
+		{
+			inputs: [
+				{
+					internalType: "address",
+					name: "_feeRecipient",
+					type: "address",
+				},
+			],
+			name: "setFeeRecipient",
+			outputs: [],
+			stateMutability: "nonpayable",
+			type: "function",
+		},
+		{
 			anonymous: false,
 			inputs: [
 				{
@@ -390,6 +422,32 @@ const Mint = () => {
 					internalType: "uint256",
 					name: "",
 					type: "uint256",
+				},
+			],
+			stateMutability: "view",
+			type: "function",
+		},
+		{
+			inputs: [],
+			name: "extraFee",
+			outputs: [
+				{
+					internalType: "uint256",
+					name: "",
+					type: "uint256",
+				},
+			],
+			stateMutability: "view",
+			type: "function",
+		},
+		{
+			inputs: [],
+			name: "feeRecipient",
+			outputs: [
+				{
+					internalType: "address",
+					name: "",
+					type: "address",
 				},
 			],
 			stateMutability: "view",
@@ -561,18 +619,26 @@ const Mint = () => {
 				contractAddress
 			);
 
+			// Log available contract methods to debug the issue
 			console.log(lighthouseContract.methods);
+
 			try {
-				await lighthouseContract.methods
-					.mintNFT(userAddress)
-					.send({ from: userAddress });
-				    mint.style.color = "green";
-					showMessage("🎉Congratulations. Your NFT should be in your wallet soon",
+				await lighthouseContract.methods.mintNFT(userAddress).send({
+					from: userAddress,
+					value: web3.utils.toWei("0.00051", "ether"), // Replace '0.01' with your fee
+				});
+				const mint = document.getElementById("checkMint");
+				mint.style.color = "green";
+				showMessage(
+					"🎉Congratulations. Your NFT should be in your wallet soon",
 					"green"
 				);
 			} catch (error) {
 				console.error("Minting failed:", error);
-				showMessage("😔 Minting failed. Try again", "red");
+				showMessage(
+					"😔Minting Failed. Try again",
+					"red"
+				);
 			}
 		} else {
 			alert("Please install MetaMask to use this feature.");
@@ -588,7 +654,6 @@ const Mint = () => {
 			message.style.backgroundColor = "";
 		}, 5000);
 	};
-	const mint = document.getElementById("checkMint");
 
 	return (
 		<div className="flex flex-row space-x-3 mt-5 ml-3 cursor-pointer">

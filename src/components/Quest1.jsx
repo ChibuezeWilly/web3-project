@@ -10,7 +10,7 @@ const Quest1 = () => {
 				style={{ backgroundColor: "black", height: '100vh'}}>
 				<p
 					id="message"
-					className="p-5 text-center text-white rounded-sm translate-y-2"></p>
+					className="p-1 md:p-5 text-center text-white rounded-sm translate-y-2"></p>
 				<div
 					className="flex flex-col absolute rounded-2xl"
 					style={{

@@ -41,7 +41,6 @@ const QuestCard = ({ quest, openQuestCardId, setOpenQuestCardId }) => {
 		// useEffect
 		const [isShaking, setStopShaking] = useState(false)
 		// useState
-
 	return (
 		<div
 			className={`quest-item ${quest.className} ${

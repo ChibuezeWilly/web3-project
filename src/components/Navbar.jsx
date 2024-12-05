@@ -38,7 +38,7 @@ const Navbar = () => {
 				}}
 				locale={locale}>
 				<nav
-					className="nav flex flex-row justify-evenly items-center w-full pt-2"
+					className="nav flex flex-row justify-evenly items-center w-full pt-2 "
 					style={{
 						backgroundColor: "#000",
 					}}>
