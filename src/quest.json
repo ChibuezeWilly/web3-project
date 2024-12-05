@@ -1,5 +1,4 @@
-{
-"quest" :[
+[
 	{
 		"id": 1,
 		"title": "Onboarding Quest: The Gateway Adventure",
@@ -25,4 +24,3 @@
 		"link": "/quest3"
 	}
 ]
-}

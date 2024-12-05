@@ -10,8 +10,7 @@
 		"lint": "eslint .",
 		"preview": "vite preview",
 		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build",
-		"server": "json-server --watch src/quest.json --port 5000"
+		"deploy": "gh-pages -d build"
 	},
 	"dependencies": {
 		"@dynamic-labs/ethereum": "^3.6.3",
